@@ -139,7 +139,6 @@ func GetVRKind(tag Tag, vr string) VRKind {
 // Find finds information about the given tag. If the tag is not part of
 // the DICOM standard, or is retired from the standard, it returns an error.
 func Find(tag Tag) (TagInfo, error) {
-	maybeInitTagDict()
 	entry, ok := tagDict[tag]
 	if !ok {
 		// (0000-u-ffff,0000)	UL	GenericGroupLength	1	GENERIC
@@ -167,7 +166,6 @@ func MustFind(tag Tag) TagInfo {
 //
 //   Example: FindTagByName("TransferSyntaxUID")
 func FindByName(name string) (TagInfo, error) {
-	maybeInitTagDict()
 	for _, ent := range tagDict {
 		if ent.Name == name {
 			return ent, nil

@@ -8,10 +8,24 @@ func FindTagInfo(t Tag) (*TagInfo, error) {
 	ti, ok := tagDict[t]
 
 	if !ok {
-		return nil,fmt.Errorf("Unknown Tag: %v", t)
+		return nil, fmt.Errorf("Unknown Tag: %v", t)
 	} else {
-		return &ti,nil
+		return &ti, nil
 	}
+}
+
+func FindTagInfoByName(n string) (*TagInfo, error) {
+	for _, ti := range tagDict {
+		if ti.Name == n {
+			return &ti, nil
+		}
+	}
+
+	return nil, fmt.Errorf("Unknown Tag: %v", n)
+}
+
+func AllTags() map[Tag]TagInfo {
+	return tagDict
 }
 
 // Code generated from generate_tag_definitions.py. DO NOT EDIT.
@@ -3869,12 +3883,6 @@ var BeamDosePointSourceToExternalContourDistance = Tag{0x300A, 0x0094}
 var tagDict map[Tag]TagInfo
 
 func init() {
-	maybeInitTagDict()
-}
-func maybeInitTagDict() {
-	if len(tagDict) > 0 {
-		return
-	}
 	tagDict = make(map[Tag]TagInfo)
 	tagDict[Tag{0x0000, 0x0000}] = TagInfo{Tag{0x0000, 0x0000}, "UL", "CommandGroupLength", "1"}
 	tagDict[Tag{0x0000, 0x0002}] = TagInfo{Tag{0x0000, 0x0002}, "UI", "AffectedSOPClassUID", "1"}
