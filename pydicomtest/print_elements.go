@@ -6,8 +6,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 	"sort"
 	"strings"
 
@@ -53,7 +53,7 @@ func main() {
 		log.Panic("print_elements_test <dicomfile>")
 	}
 	path := flag.Arg(0)
-	bytes, err := ioutil.ReadFile(path)
+	bytes, err := os.ReadFile(path)
 	if err != nil {
 		panic(err)
 	}

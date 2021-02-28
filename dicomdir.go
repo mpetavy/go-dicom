@@ -2,7 +2,6 @@ package dicom
 
 import (
 	"io"
-	"io/ioutil"
 	"strings"
 
 	"github.com/mpetavy/go-dicom/dicomtag"
@@ -18,7 +17,7 @@ type DirectoryRecord struct {
 //
 // http://dicom.nema.org/medical/Dicom/2016b/output/chtml/part03/sect_F.2.2.2.html
 func ParseDICOMDIR(in io.Reader) (recs []DirectoryRecord, err error) {
-	bytes, err := ioutil.ReadAll(in)
+	bytes, err := io.ReadAll(in)
 	if err != nil {
 		return nil, err
 	}

@@ -3,8 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 
 	"github.com/mpetavy/go-dicom"
 	"github.com/mpetavy/go-dicom/dicomtag"
@@ -39,7 +39,7 @@ func main() {
 				for _, frame := range data.Frames {
 					path := fmt.Sprintf("image.%d.jpg", n) // TODO: figure out the image format
 					n++
-					ioutil.WriteFile(path, frame, 0644)
+					os.WriteFile(path, frame, 0644)
 					fmt.Printf("%s: %d bytes\n", path, len(frame))
 				}
 			}
