@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/gobwas/glob v0.2.3
 	github.com/stretchr/testify v1.8.1
-	golang.org/x/text v0.4.0
+	golang.org/x/text v0.9.0
 )
 
 require (
