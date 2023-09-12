@@ -1,6 +1,8 @@
 module github.com/mpetavy/go-dicom
 
-go 1.20
+go 1.21
+
+toolchain go1.21.1
 
 require (
 	github.com/gobwas/glob v0.2.3
