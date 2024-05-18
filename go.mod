@@ -7,7 +7,7 @@ toolchain go1.21.1
 require (
 	github.com/gobwas/glob v0.2.3
 	github.com/stretchr/testify v1.8.1
-	golang.org/x/text v0.14.0
+	golang.org/x/text v0.15.0
 )
 
 require (
