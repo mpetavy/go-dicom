@@ -1,13 +1,13 @@
 module github.com/mpetavy/go-dicom
 
-go 1.22
+go 1.23
 
-toolchain go1.22.5
+toolchain go1.23.2
 
 require (
 	github.com/gobwas/glob v0.2.3
 	github.com/stretchr/testify v1.9.0
-	golang.org/x/text v0.15.0
+	golang.org/x/text v0.19.0
 )
 
 require (
