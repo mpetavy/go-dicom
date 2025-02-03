@@ -294,7 +294,7 @@ func elementString(e *Element, nestLevel int) string {
 	} else {
 		var sv string
 		if len(e.Value) == 1 {
-			sv = fmt.Sprintf("%v", e.Value)
+			sv = fmt.Sprintf("%v", e.Value[0])
 		} else {
 			sv = fmt.Sprintf("(%d)%v", len(e.Value), e.Value)
 		}
